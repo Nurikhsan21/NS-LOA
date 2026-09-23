@@ -1,0 +1,98 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.8">
+  <diagram name="Page-1" id="TpuafEQ_yTEWG9SGFUj5">
+    <mxGraphModel dx="319801" dy="155848" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="conn1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="start" target="init_pop" edge="1" />
+        <mxCell id="conn2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="init_pop" target="eval_pop" edge="1" />
+        <mxCell id="conn3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="eval_pop" target="train_cnn" edge="1" />
+        <mxCell id="conn4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="train_cnn" target="calc_acc" edge="1" />
+        <mxCell id="conn5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="calc_acc" target="measure_latency" edge="1" />
+        <mxCell id="conn6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="measure_latency" target="init_archive" edge="1" />
+        <mxCell id="conn7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="init_archive" target="while_start" edge="1" />
+        <mxCell id="conn8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="while_start" target="non_dominated_sort" edge="1" />
+        <mxCell id="conn9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="non_dominated_sort" target="crowding_dist" edge="1" />
+        <mxCell id="conn10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="crowding_dist" target="selection" edge="1" />
+        <mxCell id="conn11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="selection" target="lion_update" edge="1" />
+        <mxCell id="conn12" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="lion_update" target="momentum_update" edge="1" />
+        <mxCell id="conn13" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="momentum_update" target="position_update" edge="1" />
+        <mxCell id="conn14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="position_update" target="eval_offspring" edge="1" />
+        <mxCell id="conn15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="eval_offspring" target="update_archive" edge="1" />
+        <mxCell id="conn16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="update_archive" target="env_selection" edge="1" />
+        <mxCell id="conn17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="env_selection" target="increment_t" edge="1" />
+        <mxCell id="conn18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="increment_t" target="check_term" edge="1" />
+        <mxCell id="conn19" value="No" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" parent="1" source="check_term" target="non_dominated_sort" edge="1" />
+        <mxCell id="conn20" value="Yes" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="check_term" target="output_solutions" edge="1" />
+        <mxCell id="conn21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="output_solutions" target="performance_analysis" edge="1" />
+        <mxCell id="conn22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="performance_analysis" target="end" edge="1" />
+        <mxCell id="ouq-1PSqB028hQ-A08zK-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="-259480" y="-131830" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-2" value="Initialize Population P(0)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131770" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-3" value="Evaluate P(0) with F(θ)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131710" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-4" value="Train CNN" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="-259510" y="-131650" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-5" value="Calculate Accuracy" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="-259510" y="-131590" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-6" value="Measure Latency" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="-259510" y="-131530" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-7" value="Initialize Archive A(0)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131470" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-8" value="While (not terminated)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131410" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-9" value="Fast Non-dominated Sort" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131350" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-10" value="Crowding Distance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131290" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-11" value="Selection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131230" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-12" value="Modified Lion Update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-131170" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-13" value="Momentum Update" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="-259510" y="-131110" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-14" value="Position Update" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="-259510" y="-131050" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-15" value="Evaluate Offspring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-130990" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-16" value="Update Archive" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-130930" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-17" value="Environmental Selection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-130870" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-18" value="t = t + 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-130810" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-19" value="Check Termination?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-130750" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-20" value="Output Solutions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-130650" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-21" value="Performance Analysis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-259530" y="-130590" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ouq-1PSqB028hQ-A08zK-22" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="-259480" y="-130530" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
