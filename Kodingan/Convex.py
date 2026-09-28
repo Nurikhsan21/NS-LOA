@@ -394,7 +394,7 @@ class Lion:
 
 
 class NSLSO_Optimizer:
-    def __init__(self, population_size=10, max_generations=6, hp_range=None, seed=42):
+    def __init__(self, population_size=10, max_generations=5, hp_range=None, seed=42):
         self.pop_size = population_size
         self.max_gen = max_generations
         # FIX #4: num_layers min 3, filters_base max 96, dense_units max 256
@@ -669,7 +669,7 @@ def main():
 
     nslso = NSLSO_Optimizer(
         population_size=10,
-        max_generations=6,
+        max_generations=5,
         hp_range={
             'learning_rate': (1e-4, 2e-3),
             'batch_size':    (32, 256),
